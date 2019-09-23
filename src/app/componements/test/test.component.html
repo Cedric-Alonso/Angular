@@ -1,0 +1,11 @@
+<div>
+    <p>Profil<br>
+    <p>ID: {{users.id}} <br>
+    Name: {{users.name}} <br>
+    Role: {{users.role}}
+</p>
+<img src="{{users.picture}}" alt="user pic">
+</div>
+<div *ngIf="errorMessage">
+    {{errorMessage}}
+</div>

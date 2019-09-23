@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BaseAngularComponent implements OnInit {
 
+  title = 'DailyStandup';
   constructor() { }
 
   ngOnInit() {

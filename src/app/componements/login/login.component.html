@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+        <form ngSubmit="onSubmit(f)" #f="ngForm">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input appHighlight type="text" id="username" class="form-control" name="username" required [(ngModel)]="username" #spyUN="ngModel">
+                <div appHighlight *ngIf="!spyUN.valid && !spyUN.pristine && !username" class="alert alert-danger">
+                    no username entered 
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input appHighlight type="text" id="password" class="form-control" name="password" required minlength="8" [(ngModel)]="password" #spyPW="ngModel">
+                <div appHighlight *ngIf="!spyPW.valid && !spyPW.pristine && !password" class="alert alert-danger">
+                    no password entered 
+                </div>
+                <div appHighlight *ngIf="!spyPW.valid && !spyPW.pristine && !spyPW.minlength && password" class="alert alert-danger">
+                    At least 8 characters long
+                </div>
+            </div>
+            <button appHighlight class="btn btn-primary" [disabled]=" " type="submit" >Login</button>
+        </form>
+    </div>
+    <!-- <button appHighlight class="btn btn-primary" type="button" (click)="check(username, password)">check</button> -->
+</div>
